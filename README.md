@@ -40,7 +40,11 @@ variable "ec2_ecs_api1" {
     # Enable or disable encryption
     volume_encrypt = true
     # Enable deletion of block device on instance termination
-    volume_delete = true 
+    volume_delete = true
+    # prometheus is enabled by default, here you can set the version.
+    prometheus_version = "1.3.1"
+    # AMI architecture, used for the prometheus install script download
+    architecture = "arm64"
   } 
 }
 

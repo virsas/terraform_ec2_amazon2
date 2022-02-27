@@ -80,9 +80,9 @@ EOF
 systemctl enable awslogsd
 systemctl start awslogsd
 
-wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-arm64.tar.gz
-tar xvfz node_exporter-1.3.1.linux-arm64.tar.gz
-mv node_exporter-1.3.1.linux-arm64/node_exporter /usr/sbin/
+wget https://github.com/prometheus/node_exporter/releases/download/v${var.instance.prometheus_version}/node_exporter-${var.instance.prometheus_version}.linux-${var.instance.architecture}.tar.gz
+tar xvfz node_exporter-${var.instance.prometheus_version}.linux-${var.instance.architecture}.tar.gz
+mv node_exporter-${var.instance.prometheus_version}.linux-${var.instance.architecture}/node_exporter /usr/sbin/
 touch /usr/lib/systemd/system/node_exporter.service
 
 cat << EOF > /usr/lib/systemd/system/node_exporter.service
@@ -104,10 +104,7 @@ EOF
 systemctl enable node_exporter.service
 systemctl start node_exporter.service
 
-# Enable or disable ECS cluster membership
 touch /tmp/ecs_${var.ecs}
-
-# Check if ECS is enabled
 if [[ ! -f "/tmp/ecs_false" ]]; then
 # Write ECS config file
 mkdir -p /etc/ecs/
