@@ -1,17 +1,17 @@
-# tfmod_ec2
+# terraform_ec2
 
 Terraform module to create amazon-2 based EC2 instance.
 
 ## Dependencies
 
-VPC <https://github.com/virsas/tfmod_vpc>
-VPC SUBNET <https://github.com/virsas/tfmod_vpc_subnet>
-VPC SG <https://github.com/virsas/tfmod_vpc_sg>
-SSHKEY <https://github.com/virsas/tfmod_ec2_sshkey>
-IAM ROLE <https://github.com/virsas/tfmod_iam_role>
+VPC <https://github.com/virsas/terraform_vpc>
+VPC SUBNET <https://github.com/virsas/terraform_vpc_subnet>
+VPC SG <https://github.com/virsas/terraform_vpc_sg>
+SSHKEY <https://github.com/virsas/terraform_ec2_sshkey>
+IAM ROLE <https://github.com/virsas/terraform_iam_role>
 
 If you are creating an instance for the ECS cluster, you require an ECS module.
-ECS Cluster <https://github.com/virsas/tfmod_ecs_cluster>
+ECS Cluster <https://github.com/virsas/terraform_ecs_cluster>
 
 ## Terraform example
 
@@ -52,7 +52,7 @@ variable "ec2_ecs_api1" {
 # EC2 Instance
 ##################
 module "ec2_ecs_api1" {
-  source          = "github.com/virsas/tfmod_ec2"
+  source          = "github.com/virsas/terraform_ec2"
 
   instance        = var.ec2_ecs_api1
 
