@@ -1,4 +1,4 @@
-# terraform_ec2
+# terraform_ec2_amazon2
 
 Terraform module to create amazon-2 based EC2 instance.
 
@@ -52,7 +52,7 @@ variable "ec2_ecs_api1" {
 # EC2 Instance
 ##################
 module "ec2_ecs_api1" {
-  source          = "github.com/virsas/terraform_ec2"
+  source          = "github.com/virsas/terraform_ec2_amazon2"
 
   instance        = var.ec2_ecs_api1
 
