@@ -27,7 +27,7 @@ variable "ec2_ecs_api1" {
     credits = "standard"
     # Instance size
     type = "t4g.small"
-    # OS AMI of YUM based linux distro. For ubuntu instance one will need to change the user_data within main.tf
+    # OS AMI of Amazon based linux distro. For anything else use github.com/virsas/terraform_ec2_instance
     image = "ami-07e30a3659a490be7"
     # Private IP address from the subnet allocated to this instance
     private_ip = "10.0.0.4"
